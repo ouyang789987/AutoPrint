@@ -1,0 +1,65 @@
+<html>
+<body style="background-color:white;color:black;font-family:arial;font-size:12px;padding:5px;">
+<h2>Introduction</h2>
+
+<p>This program is intended for use with inkjet printers, and allows you to "exercise" the various color nozzles on the cartridges so that your print head doesn't clog up and render the printer unusable.  You can either run the application as you are now (with the GUI), or you can use it as a command line application, possibly running it via the Windows Scheduler.</p>
+
+<p>All printers that you have drivers installed for will show up in the Installed Printers list. I have not yet found a way to ensure that a network printer is actually powered on and in a ready state, so keep that in mind if you are using such a printer.</p>
+
+<p>One of the features of AutoPrint is the ability to re-use the same sheet of paper until it is full (and then flip the paper over and use the back). This allows you to exercise your printer almost 150 times before you need to start on a new sheet of paper.</p>
+
+<h2>Using the program in GUI mode</h2>
+
+<p>When the program uis started, it immediately scans for installed printers, and populates the list at the top of the window.  As you can see by the sample image below, I have four printers installed.</p>
+
+<p><center><img src="screenshot01.png"></center></p>
+
+<p>Selecting a printer from this list causes the "Colors To Print" list to be populated.  If the printer supports color printing, a number of colors will be displayed, and you'll be able to select them. If the printer does NOT support color printing, the only color available will be black, and you will not be able to deselect that color.</p>
+
+<p><center><img src="screenshot02.png"></center></p>
+
+<p>As you probably are aware, various printers have differing numbers of ink cartridges. My Epson 1400 has six cartidges (as did my Epson R200), my HP L7580 has just four, and I think most Canon printers only have four.  Most color inkjets available today provide Black, Cyan, Yellow, and Magenta cartridges.  In the case of Epson printers, you also get Light Cyan, and Light Magenta. Some higher end printers may even provide a Light Black cartridge.  Still others may provide Red, Blue and Green. </p>
+
+<p>No matter which printer you have, if it supports color printing, you may select from ANY of the colors listed in this box.  To print with a given color, simply check the box next to it (Black, Cyan, Yellow, and Magenta should already pre-selected).</p>
+
+<p>Once you've selected your printer and the colors to print, you can perform a number of additional functions using the buttons on the right side of the window.</p>
+
+<h3>The <i>Preview</i> Button</h3>
+
+<p>This button allows you to see where the test image will be printed on the paper before you actually print.  Of course, there's a Print button on the Preview window so that you can print directly from the preview.</p>
+
+<h3>The <i>Preview Extended</i> Button</h3>
+
+<p>This button allows you to see what a full sheet of test images would look like. It should be used to verify that the calculated position of each test image is positioned on the page in such a way as to not exceed the bounds of the paper.  AutoPrint determines each position by using metrics provided by the printer.  Before you print the first time, please use this button to ensure that AutoPrint is correctly calculating your page size.</p>
+
+<p>Note - It will take a few seconds for AutoPrint to display the Preview window for this button, sobe patient. Also, it's probably not wise to print from this Preview screen because it will a) be a waste of precious ink, and b) use up one complete side of a sheet of paper.</p>
+
+<h3>The <i>Print</i> Button</h3>
+
+<p>This button allows you to print a test image at the next calculated position. There is a checkbox just above this button labelled "Reset position". If this checkbox is checked when you click the Print button, the image will be printed at the first position on the page (the top-left corner).  You should only need to do this if you changed paper for some reason after already having printed one or more test images.</p>
+
+<h3>The <i>Save Colors</i> Button</h3>
+
+<p>This button saves the selected colors for the current printer so that the next time you use AutoPrint, it will remember the colors that were previously selected, and the Colors To Print list will be initialized with those colors checked.</p>
+
+<h3>The <i>Make Cmd File</i> Button</h3>
+
+<p>This button allows you to create a .CMD file, suitable for use in the Windows scheduler, or from the Windows DOS Command window. Instead of forcing you to type the contents and potentially make a mistake, AutoPrint creates the file for you.  The files are placed in one of the following folders:</p>
+
+<p>In Windows Vista, 7, 8, 10:</p>
+<p>&nbsp;&nbsp;&nbsp;C:\ProgramData\AutoPrint</p>
+
+<p>In XP:</p>
+<p>&nbsp;&nbsp;&nbsp;C:\Documents and Settings\All Users\Application Data\AutoPrint</p>
+
+<p>The cmd file is the same as your printer name with underscores replacing and spaces (and in the event your printer is a network printer, backslashes are simply removed.  The commandline generated includes the name of the printer, and the colors to be printed, and looks something like this:</p>
+
+<p>&nbsp;&nbsp;&nbsp;<code>autoprint name="XP-760 Series" colors="Black|Cyan|Magenta|Yellow|LightCyan|LightMagenta"</code></p>
+
+<p>Just above the Make Cmd File button, you'll see a checkbox labelled "Use Saved Colors". This creates a slightly different cmd file, like so:</p>
+
+<p>&nbsp;&nbsp;&nbsp;<code>autoprint config="XP-760 Series"</code></p>
+
+<p>This forces AutoPrint to load the saved colors from the config file for the named printer (saved when you clicked the Save Colors button).  As you can see, it creates a much simpler command line.</p>
+</body>
+</html>
