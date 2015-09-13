@@ -41,6 +41,7 @@
             this.buttonMakeCmdFile = new System.Windows.Forms.Button();
             this.buttonSaveColors = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.checkboxUseSavedColors = new System.Windows.Forms.CheckBox();
             this.pictureboxSideLabel = new System.Windows.Forms.PictureBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -56,11 +57,10 @@
             this.tooltipButtonMakeCmdFile = new System.Windows.Forms.ToolTip(this.components);
             this.tooltipButtonDone = new System.Windows.Forms.ToolTip(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureboxSideLabel)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -106,7 +106,7 @@
             this.printPreviewDialog.AutoScrollMinSize = new System.Drawing.Size(0, 0);
             this.printPreviewDialog.ClientSize = new System.Drawing.Size(400, 300);
             this.printPreviewDialog.Enabled = true;
-            this.printPreviewDialog.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog.Icon")));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.printPreviewDialog.Name = "printPreviewDialog";
             this.printPreviewDialog.Visible = false;
             // 
@@ -117,7 +117,7 @@
             this.listOfColors.Location = new System.Drawing.Point(36, 24);
             this.listOfColors.MultiSelect = false;
             this.listOfColors.Name = "listOfColors";
-            this.listOfColors.Size = new System.Drawing.Size(137, 195);
+            this.listOfColors.Size = new System.Drawing.Size(137, 222);
             this.listOfColors.SmallImageList = this.imageListSmall;
             this.listOfColors.TabIndex = 0;
             this.listOfColors.UseCompatibleStateImageBehavior = false;
@@ -193,6 +193,16 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "For Currently Selected Printer";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(243, 210);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(143, 36);
+            this.button1.TabIndex = 15;
+            this.button1.Text = "Open ProgramData Folder";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // checkboxUseSavedColors
             // 
             this.checkboxUseSavedColors.AutoSize = true;
@@ -210,7 +220,7 @@
             this.pictureboxSideLabel.Location = new System.Drawing.Point(8, 24);
             this.pictureboxSideLabel.Margin = new System.Windows.Forms.Padding(0);
             this.pictureboxSideLabel.Name = "pictureboxSideLabel";
-            this.pictureboxSideLabel.Size = new System.Drawing.Size(29, 195);
+            this.pictureboxSideLabel.Size = new System.Drawing.Size(29, 222);
             this.pictureboxSideLabel.TabIndex = 14;
             this.pictureboxSideLabel.TabStop = false;
             this.pictureboxSideLabel.Click += new System.EventHandler(this.pictureboxSideLabel_Click);
@@ -264,19 +274,19 @@
             this.menuStrip1.TabIndex = 5;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // helpToolStripMenuItem
-            // 
-            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
-            this.helpToolStripMenuItem.Text = "Help";
-            this.helpToolStripMenuItem.Click += new System.EventHandler(this.helpToolStripMenuItem_Click);
-            // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
+            // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.helpToolStripMenuItem.Text = "Help";
+            this.helpToolStripMenuItem.Click += new System.EventHandler(this.helpToolStripMenuItem_Click);
             // 
             // label1
             // 
@@ -296,16 +306,6 @@
             this.label2.Text = "If the name of your printer contains any of the following characters: \" ! “ # $ %" +
     " & ‘ ( ) * + , - . / : ; < = > ? @ { | } ~ [ \\ ] ^** \" Please remove them, as it" +
     " may crash AutoPrint!";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(274, 210);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(112, 36);
-            this.button1.TabIndex = 15;
-            this.button1.Text = "Open ProgramData Folder";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form1
             // 

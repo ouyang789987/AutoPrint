@@ -440,9 +440,8 @@ namespace AutoPrint
 		{
 			if (ExtractHelpResources())
 			{
-				FormHelp form = new FormHelp();
-				form.ShowDialog();
-			}
+                System.Diagnostics.Process.Start(System.IO.Path.GetDirectoryName(ProfileBitmap.GetDataFileName()) + @"\AutoPrintHelp.html");
+            }
 			else
 			{
 				MessageBox.Show("Help Resources could not be extracted from the exe file. Help is not avaiilable.", "Help Not Available");
